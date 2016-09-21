@@ -2,7 +2,11 @@
 
 int main(int argc, char **argv, char **envp)
 {
-	execvp("ls",argv);
+	
+	
+	argv[argc-1]=NULL;
+	
+	execvp(argv[0],argv);
 	return 0;
 	//printf("\n Start %d",a++);
 	
