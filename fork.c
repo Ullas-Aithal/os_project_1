@@ -57,11 +57,11 @@ void execCommand(char *s)
 	}
 	command[j++] = temp;
 	command[j] = NULL;
-	printf("%s\n", command[0]);
-	printf("%s", command[1]);
-	printf("%s", command[2]);
-	printf("%s", command[3]);
-	printf("%s", command[4]);
-	//execvp(command[0],command);
+	//printf("%s\n", command[0]);
+	//printf("%s", command[1]);
+	//printf("%s", command[2]);
+	//printf("%s", command[3]);
+	//printf("%s", command[4]);
+	execvp(command[0],command);
 	
 }
