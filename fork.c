@@ -3,6 +3,8 @@
 #include<stdlib.h>
 void execCommand(char *);
 char** evaluation (char *);
+int getCount(char **);
+void push();
 int main(int argc, char **argv, char **envp)
 
 {
@@ -15,9 +17,13 @@ int main(int argc, char **argv, char **envp)
 	
 	command = evaluation(s);
 	
-	execCommand(command[1]);
+	//execCommand(command[1]);
 	
-	printf("%s",command[1]);
+	
+	
+	int g = getCount(command);
+	printf("%d",g);
+
 	
 	return 0;
 
@@ -26,7 +32,7 @@ char** evaluation (char *input)
 {
 	char **buffer;
 	char *b[100];
-	char *stack[100];
+	char *stack_temp[100];
 	char *temp = (char*) malloc(100);
 	//memset(temp, '\0', 1);
 	//memset(buffer, '\0', 100);
@@ -70,6 +76,16 @@ char** evaluation (char *input)
 	}
 	buffer[j]=NULL;
 	
+	// void push()
+	// {
+		// buf_count = getCount(buffer);
+		
+		// while(buf_count > 0)
+		// {
+			// strcpy(stack_temp[stack_count++],buffer[buf_count--];
+		// }
+		
+	// }
 	
 		//printf("%s",buffer[0]);
 	
@@ -85,6 +101,15 @@ char** evaluation (char *input)
 		// printf("%d = %s",l,buffer[l]);
 	// }
 	return buffer;
+}
+int getCount(char** var)
+{
+	int count =0;
+	for(count=0;var[count] != '\0';count++)
+		{
+				
+		}
+	return count;
 }
 void execCommand(char *s)
 {
